@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mb_task4/styles.dart';
+import 'package:readmore/readmore.dart';
 
 class HomePagee extends StatefulWidget {
   const HomePagee ({super.key});
@@ -154,18 +155,18 @@ Widget makePageWidget({page, imagePath, title, description}) {
                     ],
                   ),
                   const SizedBox(height: 10,),
-                  /*Padding(
+                  Padding(
                     padding: const EdgeInsets.only(right: 50),
-                    child: Text(
+                    child: ReadMoreText(
                       description,
+                        trimLines: 2,
                         style: ThemeText.descriptionText,
+                      colorClickableText: Colors.brown,
+                      trimMode: TrimMode.Line,
+                      trimCollapsedText: 'продолжить',
+                      trimExpandedText: 'скрыть',
                     ),
-                  ),*/
-                  // SafeArea(
-                  //     child: ViewWidget,
-                  // ),
-
-
+                  ),
 
                 ],
               ) ,
@@ -176,48 +177,3 @@ Widget makePageWidget({page, imagePath, title, description}) {
     ),
   );
 }
-/*
-class ViewWidget extends StatefulWidget {
-  @override
-  ViewWidgetState createState() => ViewWidgetState();
-}
-
-class ViewWidgetState extends State{
-
-  bool viewVisible = true;
-
-  void showWidget(){
-    setState(() {
-      viewVisible = true;
-    });
-  }
-  void hideWidget(){
-    setState(() {
-      viewVisible = false;
-    });
-  }
-
-  Widget fds ({description}) {
-    return Column(
-      children: <Widget> [
-        Visibility(
-          maintainSize: true,
-          maintainAnimation: true,
-          maintainState: true,
-          visible: viewVisible,
-          child:  Padding(
-            padding: const EdgeInsets.only(right: 50),
-            child: Text(
-              description,
-              style: ThemeText.descriptionText,
-            ),
-          ),
-        ),
-        RaisedButton(
-        child: Text( 'dalee'),
-        onPressed: hideWidget,
-        ),
-      ],
-    );
-  }
-}*/
